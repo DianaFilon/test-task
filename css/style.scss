@@ -2,14 +2,17 @@
 $color-black: #020202;
 $color-grey: #191919;
 $color-light-gray:#1E1E1E;
+$color-less-grey: #B3B3B3;
 $color-green: #8DCD43;
 $color-white: #FFFFFF;
 $color-less-white:#E3E3E3;
 $color-yellow:#E4BD34;
+$color-yellow-green: #DBFF00;
 
-// font-family: 'Inter', sans-serif; 300, 400
+
 // font-family: 'Montserrat', sans-serif; 100 200 300 500 600 
-// font-family: 'Roboto Flex', sans-serif; 100  200, 600
+// font-family: 'Roboto Flex', sans-serif; 100  200, 600, 700
+// font-family: 'Inter', sans-serif; 300, 400
 :root{
     --main-font: 'Montserrat', sans-serif;
     --sub-font: 'Roboto Flex', sans-serif;
@@ -19,12 +22,14 @@ $color-yellow:#E4BD34;
     --title-innovation: 600 48px/52px var(--main-font);
     --text: 600 24px/27px var(--sub-font);
     --sub-text: 600 18px/20px var(--sub-font);
+    --sub-title: 700 32px/35px var(--sub-font);
     --header-text: 600 14px/15px var(--sub-font);
     --description: 200 22px/25px var(--sub-font);
     --details: 200 18px/20px var(--sub-font);
     --button: 400 16px/16px var(--sub-font);
     --hero-text: 300 32px/35px var(--text-font);
     --hero-nav: 400 12px/18px var(--text-font);
+    --footer-text: 300 17px/24px var(--text-font);
 
     // Mobile
     --title-mob: 500 20px/26px var(--main-font);
@@ -32,10 +37,10 @@ $color-yellow:#E4BD34;
     --text-mob: 200 20px/normal var(--main-font);
     --description-mob: 200 14px/15px var(--sub-font);
     --details-mob: 100 13px/16px var(--main-font);
-    
+    --footer-text-mb: 300 14px/20px var(--main-font);
 }
 
-$desctop: 1700px;
+$desctop: 991px;
 
 * {
     font-size: -1;
@@ -46,9 +51,10 @@ $desctop: 1700px;
 
 body{
     background-color: $color-grey;
+    color: $color-white;
 }
 .wrapper{
-    overflow: hidden;
+  overflow: hidden;
     width: 100%;
 }
 .container{
@@ -65,13 +71,13 @@ padding: 25px 10px;
     display: flex;
     border-bottom: 1px solid $color-yellow;
     padding: 20px 0px;
+    justify-content: space-between;
 }
     &__contact{
         display: none;
         @media (min-width:$desctop) {
          display: flex;
             gap: 30px;
-            padding-right: 1113px;
             align-items: center;
         }
      
@@ -98,16 +104,19 @@ padding: 25px 10px;
     &__container{
         justify-content: space-between;
         display: flex;
-
+        width: 100%;
             @media (min-width:$desctop) {
                 margin: 0;
+                width: 100%;
             }
         }
         
     &__container-desctop{
         display: none;
         @media (min-width: $desctop) {
+            width: 100%;
         display: flex;
+        justify-content: space-between;
  }
     }
    &__icons{
@@ -214,13 +223,13 @@ padding: 25px 10px;
     @media (min-width:$desctop) {
             display: flex;
             padding-bottom: 145px;
+            justify-content: space-between;
          }
     }
     &__logo-desc{
         display: none;
         @media (min-width:$desctop) {
             display: flex;
-            padding-right: 845px;
          }
     }
     &__logo-img-desc{
@@ -322,7 +331,7 @@ padding: 25px 10px;
         transform: translate(-50%, -50%);
         z-index: 3;
         @media (min-width:$desctop) {
-           width: 100%; 
+           width: 57%; 
            max-width: 810px;
            top: 30%;
         left: 33%;
@@ -382,10 +391,9 @@ padding: 25px 10px;
     margin-bottom: 90px;
     padding-top: 40px;
     &__container{
-        position: relative;
-        padding-top: 180px;
         @media (min-width:$desctop) {
            padding-top: 0;   
+          
       }
     }
     &__container-info{
@@ -394,19 +402,11 @@ padding: 25px 10px;
      }
     }
     &__img{
-        position: absolute;
-        top: 80px;
-        left: 50%;
-        transform: translate(-50%, -50%);
         align-items: center;
         max-width: 355px;
         border-radius: 8px;
         margin-bottom: 10px;
         @media (min-width:$desctop) {
-          position: static;
-          top: auto;
-          left: auto;
-          transform: none;
             align-items: initial; 
             max-width: 1110px; 
             border-radius: 23px;
@@ -489,7 +489,6 @@ padding: 25px 10px;
             }
     }
 }
-
 .xag{
     &__container{
         background-color: $color-light-gray;
@@ -498,6 +497,7 @@ padding: 25px 10px;
         padding: 12px;
         position: relative;
         padding-top: 150px;
+        margin-bottom: 60px;
         @media (min-width:$desctop) {
            margin: 0 122px 201px 122px;
            padding: 0 158px 60px 158px;
@@ -604,5 +604,334 @@ padding: 25px 10px;
     }
   
     }
+.advantages{
+   &__container{
+    padding-bottom: 60px;
+    @media (min-width:$desctop) {
+       display: flex;
+       justify-content: space-between;
+       padding-bottom: 180px;
+     }
+   }
+    &__img-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (min-width:$desctop) {
+            align-items: self-start;
+          }
+    }
    
+    &__img{
+        width: 70%;
+        padding-bottom: 30px;
+        @media (min-width:$desctop) {
+            width: 95%;
+            position: sticky;
+            top: 20px;
+          }
+    }
+    &__title{
+    font: var(--sub-text);
+    text-align: center;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    @media (min-width:$desctop) {
+      font: var(--title-innovation);
+      }
+    }
 
+    &__items{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (min-width:$desctop) {
+            gap: 30px;
+            }
+    }
+    &__item{
+        background-color: $color-light-gray;
+        border-radius: 4px;
+        padding: 30px 16px;
+        text-align: center;
+        border-radius: 8px;
+        @media (min-width:$desctop) {
+           width: 548px;
+            padding: 30px 40px;
+            }
+       
+    }
+    &__img-item{
+        width: 68px ;
+        height: 68px;
+        padding-bottom: 10px;
+        @media (min-width:$desctop) {
+            display: flex;
+           justify-content: start;
+           padding-bottom: 16px;
+              }
+    }
+    &__item-title{
+        font: var(--sub-text-mob);
+        padding-bottom: 8px;
+        @media (min-width:$desctop) {
+            font: var(--text);
+            text-align: start;
+            letter-spacing: 0.48px;
+            padding-bottom: 16px;
+              }
+    }
+
+    &__item-text{
+        font:var(--details-mob) ;
+        padding-bottom: 8px;
+        @media (min-width:$desctop) {
+            font: var(--description);  
+            text-align: start;
+            letter-spacing: 0.44px;
+             }
+    }
+   }
+.foreveryone{
+ &__container{
+    padding-bottom: 60px;
+    @media (min-width:$desctop) {
+        padding-bottom: 160px;
+          }
+  
+ }
+    &__img{
+        width: 100%;
+        border-radius: 3px;
+        padding-bottom: 20px;
+        @media (min-width:$desctop) {
+           padding: 0 144px 40px 144px;
+           border-radius: 10px;
+             }
+    }
+    &__title{
+        font: var(--sub-title-mob);
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+        @media (min-width:$desctop) {
+            font: var(--title) ;
+        }
+    }
+    &__span{
+        font-weight: normal;}
+
+    &__items{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (min-width:$desctop) {
+            gap: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 144px;
+            }
+    }
+    &__item{
+        background-color: $color-light-gray;
+        border-radius: 4px;
+        padding: 30px 16px;
+        text-align: center;
+        border-radius: 8px;
+        @media (min-width:$desctop) {
+        display: flex;
+        gap: 20px;
+        padding: 50px 30px;
+        border-radius: 8px;
+            }   
+    }
+    &__img-item{
+        width: 130px;
+        height: 130px;
+        padding-bottom: 10px;
+        @media (min-width:$desctop) {
+            width: 176px;
+            height: 176px;
+                }   
+    }
+    &__item-title{
+        font: var(--sub-text-mob);
+        color: $color-yellow;
+        padding-bottom: 10px;
+        letter-spacing: 0.8px;
+        font-weight: 600;
+        @media (min-width:$desctop) {
+           font: var(--text);
+           text-align: start;
+                }   
+    }
+    &__item-text{
+        font: var(--details-mob);
+        line-height: 14px;
+        @media (min-width:$desctop) {
+            font: var(--description);
+            letter-spacing: 0.44px;
+            text-align: start;
+                 }    
+    }
+}
+
+.services{
+    &__container{
+        padding-bottom: 60px;
+        @media (min-width:$desctop) {
+            padding-bottom: 160px;
+              }
+    }
+    &__info-container{
+align-self: flex-end;
+padding-right: 130px;
+    }
+   &__items{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+  
+    }
+    &__item{
+        @media (min-width:$desctop) {
+           display: flex;
+        }
+    }
+    &__img{
+        width: 100%;
+        padding-bottom: 20px;
+        @media (min-width:$desctop) {
+            padding-right: 164px;
+            width: 950px;
+            padding-bottom: 0px;
+         }
+    }
+    &__title{
+        font: var(--sub-title-mob);
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 40px;
+        @media (min-width:$desctop) {
+            font: var(--title-innovation) ;
+            text-align: start;
+        }
+    }
+    &__item-title{
+        font: var(--sub-title-mob);
+        padding-bottom: 20px;
+        @media (min-width:$desctop) {
+            font: var(--sub-title) ;
+           
+        }
+    }
+    &__item-text{
+        font: var(--details-mob);
+        line-height: 14px;
+        margin-bottom: 25px;
+        @media (min-width:$desctop) {
+            font: var(--description) ;
+            padding-bottom: 40px;
+            margin-bottom: 0;
+           
+        }
+    }
+    &__item-buttons{
+        @media (min-width:$desctop) {
+            display: flex;
+            gap: 22px; 
+        }
+       
+    }
+    &__button2{
+        background-color: $color-grey;
+    }
+}
+.footer{
+    background-color: $color-black;
+    &__container-main-info{
+        border-bottom: 1px solid $color-yellow-green;
+    }
+    &__logo{
+        display: flex;
+        padding: 40px 0;
+        justify-content: center;
+        @media (min-width:$desctop) {
+            padding-top: 60px;
+            padding-bottom: 45px;
+        }
+      
+    }
+    &__logo-img{
+        width: 30px;
+        @media (min-width:$desctop) {
+            width: 45px;
+            height: 25px;
+        }
+    }
+    &__logo-name-img{
+        width: 200px;
+        @media (min-width:$desctop) {
+            width: 260px;
+        }
+    }
+    &__contact{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    @media (min-width:$desctop) {
+        gap: 29px;
+    }
+    }
+    &__nav-link{
+        color: $color-white;
+        text-decoration-line: none;
+        font: var(--detail);
+        @media (min-width:$desctop) {
+            font: var(--hero-nav);
+            letter-spacing: 0.24px;   
+        }
+    }
+    &__nav-desc{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    padding-bottom: 20px;
+    @media (min-width:$desctop) {
+       display: flex; 
+       flex-direction: row;
+       gap: 71px;
+       padding-bottom: 51px;
+    }
+    }
+    &__contact-text{
+    color: $color-white;
+    margin-bottom: 20px;
+    }
+    &__number{
+        color: $color-green ; 
+        font: var(--header-text);
+    }
+    &__icons{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
+        gap: 10px;
+    }
+    &__info-text{
+        display: flex;
+        justify-content: center;
+    font: var(--footer-text-mb);
+    color: $color-less-white;
+    padding: 80px 40px;
+        @media (min-width:$desctop) {
+        font: var(--footer-text);
+        color: $color-less-grey;
+            }
+    }
+    }
+
+ 
