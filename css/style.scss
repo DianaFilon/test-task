@@ -785,8 +785,11 @@ padding: 25px 10px;
               }
     }
     &__info-container{
-align-self: flex-end;
+        @media (min-width:$desctop) {
+            align-self: flex-end;
 padding-right: 130px;
+              }
+
     }
    &__items{
         display: flex;
@@ -795,6 +798,8 @@ padding-right: 130px;
   
     }
     &__item{
+        display: flex;
+        flex-direction: column;
         @media (min-width:$desctop) {
            display: flex;
         }

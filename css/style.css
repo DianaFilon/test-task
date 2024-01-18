@@ -858,14 +858,20 @@ body {
     padding-bottom: 160px;
   }
 }
-.services__info-container {
-  align-self: flex-end;
-  padding-right: 130px;
+@media (min-width: 991px) {
+  .services__info-container {
+    align-self: flex-end;
+    padding-right: 130px;
+  }
 }
 .services__items {
   display: flex;
   flex-direction: column;
   gap: 60px;
+}
+.services__item {
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 991px) {
   .services__item {
